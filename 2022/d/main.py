@@ -1,6 +1,5 @@
 import statistics
 import itertools
-import time
 
 def sorted_k_partitions(seq, k):
     # absolute legend from https://stackoverflow.com/questions/39192777/how-to-split-a-list-into-n-groups-in-all-possible-combinations-of-group-length-a
@@ -66,20 +65,20 @@ def minDiff(arr, n):
     return a, b, diff
 
 def main():
-    inputs = open("ts1_input.txt", 'r').readlines()
-    inputs = [i.replace("\n", '') for i in inputs]
-    testCases = int(inputs[0])
-    for cases in range(1, testCases):
-        lineTwo = inputs[cases * 2].split(" ")
+    #inputs = open("image_labeler_sample_ts2_input.txt", 'r').readlines()
+    testCases = int(input())
+    for cases in range(0, testCases):
+        lineTwo = input().split(" ")
         countries = int(lineTwo[0])
         categories = int(lineTwo[1])
-        people = [int(x) for x in inputs[cases * 2].split(' ')]
+        people = [int(x) for x in input().split(' ')]
+        people.sort()
 
 
         #print(testCases)
         #print(countries)
         #print(categories)
-        print(people)
+        #print(people)
         if categories == 1:
             print(f'Case #1: {median(people)}')
         else:
